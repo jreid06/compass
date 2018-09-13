@@ -18,9 +18,9 @@ function initCompass(){
 			console.log(data);
 			let listitem = document.createElement('li');
 		
-			speed.textContent = data.coords.heading + "mph";
+			speed.textContent = data.coords.longitude + "mph";
 			compass.style.transform = "rotate("+data.coords.heading+"deg)";
-			listitem.innerHTML = data.coords.heading;
+			listitem.innerHTML = "heading: " + data.coords.heading;
 
 			console.log(typeof data);
 			

@@ -1,0 +1,44 @@
+body {
+  height: 100%;
+  overflow-x: hidden;
+  background-color: rgba(0, 24, 62, 0.3); }
+
+.compass-wrapper {
+  width: 80%;
+  height: 100vh;
+  margin: 0 auto;
+  position: relative;
+  padding-top: 50px; }
+  @media screen and (min-width: 768px) {
+    .compass-wrapper {
+      width: 28%; } }
+
+.compass {
+  position: relative;
+  width: 100%;
+  transition: all .8s ease-in-out;
+  margin: 0 auto;
+  text-align: center;
+  transform-origin: 0; }
+
+.btn {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #e5e5e5;
+  background-color: #EF263D;
+  text-transform: capitalize; }
+
+.green {
+  color: green;
+  text-transform: capitalize; }
+
+#compass-icon {
+  width: 100%; }
+  #compass-icon img {
+    width: 100%; }
+
+.compass-data {
+  position: relative;
+  top: -15%; }
+
+/*# sourceMappingURL=compass.css.map */

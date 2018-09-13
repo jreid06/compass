@@ -20,7 +20,7 @@ function initCompass(){
 		
 			speed.textContent = data.coords.heading + "mph";
 			compass.style.transform = "rotate("+data.coords.heading+"deg)";
-			listitem.textContent = data.coords.heading;
+			listitem.innerHTML = data.coords.heading;
 
 			console.log(typeof data);
 			

@@ -53,8 +53,8 @@ function initCompass() {
 			let listitem = document.createElement('li'),
 				accuracy_dta = data.coords.accuracy,
 				heading_dta = data.coords.heading,
-				longitude_dta = Math.round(data.coords.longitude),
-				latitude_dta = Math.round(data.coords.latitude),
+				longitude_dta = data.coords.longitude.toFixed(7),
+				latitude_dta = data.coords.latitude.toFixed(7),
 				speed_dta = data.coords.speed;
 
 

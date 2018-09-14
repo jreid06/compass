@@ -29,40 +29,51 @@ function returnRandomNum(max) {
 
 function initCompass() {
 	let compass = document.getElementById('compass-icon'),
-		speed = document.getElementById('speed'),
 		errorBox = document.querySelector('.error-heading'),
 		geolocationStatus = document.querySelector('.green'),
-		listjson = document.querySelector('.geolocationdata');
+		accuracy = document.getElementById("accuracy"),
+		heading = document.getElementById("heading"),
+		longitude = document.getElementById("longitude"),
+		latitude = document.getElementById("latitude"),
+		speed = document.getElementById("speed");
 
 
 
-	// if (navigator.geolocation) {
-	// 	geolocationStatus.textContent = 'geo location browser';
-	// 	// navigator.geolocation.getCurrentPosition(moveIconCoords);
+	if (navigator.geolocation) {
+		geolocationStatus.textContent = 'geo location browser';
 
-	// 	navigator.geolocation.watchPosition(function (data) {
-	// 		console.log(data);
-	// 		let listitem = document.createElement('li'),
-	// 			random_num = returnRandomNum(20);
+		options = {
+			enableHighAccuracy: false,
+			timeout: 5000,
+			maximumAge: 0
+		};
 
-	// 		speed.textContent = data.coords.speed + "mph";
-	// 		compass.style.transform = "rotate(" + random_num + "deg)";
-	// 		listitem.innerHTML = "random_num: " + random_num;
-
-	// 		// console.log(typeof data);
-
-
-	// 		// listjson.appendChild(listitem);
-
-	// 	}, function (err) {
-	// 		// errorBox.textContent = 'LOCATION PERMISSION DENIED. COMPASS NOT GOING TO WORK';
-	// 	});
+		navigator.geolocation.watchPosition(function (data) {
+			console.log(data);
+			let listitem = document.createElement('li'),
+				accuracy_dta = data.coords.accuracy,
+				heading_dta = data.coords.heading,
+				longitude_dta = data.coords.longitude,
+				latitude_dta = data.coords.latitude,
+				speed_dta = data.coords.speed;
 
 
-	// } else {
-	// 	console.log('not a geo location browser');
 
-	// }
+			speed.innerHTML = speed_dta + "mph";
+			heading.innerHTML = "Heading:" +heading_dta;
+			longitude.innerHTML = "Longitude:"+longitude_dta;
+			latitude.innerHTML = "Latitude:" +latitude_dta;
+			accuracy.innerHTML = "Accuracy:" +accuracy_dta;
+
+		}, function (err) {
+			errorBox.innerHTML = 'LOCATION PERMISSION DENIED. COMPASS NOT GOING TO WORK';
+		}, options);
+
+
+	} else {
+		console.log('not a geo location browser');
+
+	}
 }
 
 

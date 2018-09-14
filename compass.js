@@ -43,7 +43,7 @@ function initCompass() {
 		geolocationStatus.textContent = 'geo location browser';
 
 		options = {
-			enableHighAccuracy: false,
+			enableHighAccuracy: true,
 			timeout: 5000,
 			maximumAge: 0
 		};

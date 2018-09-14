@@ -11,7 +11,7 @@ function deviceHandler(event) {
 	let compass = document.getElementById('compass-icon');
 
 	listjson = document.querySelector('.geolocationdata');
-	listjson.innerHTML = "<span style=\"float: left\">heading: </span>" + heading;
+	listjson.innerHTML = "<span style=\"float: left\">heading: </span>" + Math.round(heading);
 
 	compass.style.transform = "rotate(" + heading + "deg)";
 }

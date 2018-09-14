@@ -7,12 +7,13 @@ function deviceHandler(event) {
 	var alpha = event.alpha;
 	var beta = event.beta;
 	var gamma = event.gamma;
+	var heading = 360 - alpha;
 	let compass = document.getElementById('compass-icon');
 
 	listjson = document.querySelector('.geolocationdata');
-	listjson.innerHTML = "<span style=\"float: left\">Beta + alpha: </span>" + (beta + alpha);
+	listjson.innerHTML = "<span style=\"float: left\">Beta + alpha: </span>" + heading;
 
-	compass.style.transform = "rotate(" + (Math.round(beta) + Math.round(alpha)) + "deg)";
+	compass.style.transform = "rotate(" + heading + "deg)";
 }
 
 if (window.DeviceOrientationEvent) {

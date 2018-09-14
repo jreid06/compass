@@ -12,7 +12,7 @@ function deviceHandler(event) {
 	listjson = document.querySelector('.geolocationdata');
 	listjson.innerHTML = "<span style=\"float: left\">Beta + alpha: </span>" + (beta + alpha);
 
-	compass.style.transform = "rotate(" + (beta + alpha) + "deg)";
+	compass.style.transform = "rotate(" + (Math.round(beta) + Math.round(alpha)) + "deg)";
 }
 
 if (window.DeviceOrientationEvent) {
